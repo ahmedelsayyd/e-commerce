@@ -1,0 +1,11 @@
+<div class="sticky-top">
+
+    <div class="list-group list-group-flush mt-4">
+        <a class="list-group-item list-group-item-action" routerLink="/" [class.active]="!selectedCategory">
+            All Caterories
+        </a>
+        <a class="list-group-item list-group-item-action" routerLink="/" [queryParams]="{category:cat.key}"
+            routerLinkActive=" active" *ngFor="let cat of categories$ | async">{{cat.value.name}}
+        </a>
+    </div>
+</div>

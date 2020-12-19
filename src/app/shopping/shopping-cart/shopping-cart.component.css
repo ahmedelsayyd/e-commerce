@@ -1,0 +1,10 @@
+.thumbnails{
+    width: 4.3rem;
+    height: 4.3rem;
+    border-radius: 100%;
+    object-fit: cover;
+}
+td{
+    padding: .5rem .75rem;
+    vertical-align: middle;
+}

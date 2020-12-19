@@ -1,0 +1,27 @@
+<a class="btn btn-primary mt-5 mb-4" routerLink="/admin/products/new">Add New Product</a>
+<p>
+
+    <input class="form-control" #query type="text" (keyup)="filter(query.value)" placeholder="search...">
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>title</th>
+            <th>price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of filteredProducts">
+            <td>{{product.value.title}}</td>
+            <td>{{product.value.price  | currency:USD:'symbol'}}</td>
+            <td>
+                <a [routerLink]="['/admin/products/',product.key]">Edit</a> |
+                <a style="cursor: pointer; color: rgb(218, 6, 6);text-decoration: underline;"
+                    (click)="delete(product.key)">Delete</a>
+            </td>
+            <td></td>
+
+        </tr>
+    </tbody>
+</table>

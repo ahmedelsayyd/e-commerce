@@ -1,0 +1,18 @@
+.cart-img{
+    object-fit: cover;
+    height: 12rem;
+}
+
+.form-img{
+    height: 18rem
+
+}
+
+.cart-img img{
+    height: 100%
+
+    
+}
+.card-footer{
+    padding: 0;
+}
