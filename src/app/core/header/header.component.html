@@ -37,46 +37,24 @@
         </li>
       </ng-template>
 
-      <li
-        ngbDropdown
-        class="nav-item dropdown"
-        *ngIf="appUser; else anonymousUser"
-      >
-        <a
+      <li ngbDropdown class="nav-item dropdown" *ngIf="appUser; else anonymousUser">
+        <button
           ngbDropdownToggle
-          class="nav-link dropdown-toggle"
+          class="nav-link  user-dropdown"
           id="navbarDropdown"
           role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          {{ appUser.name }}
-        </a>
-        <div
-          ngbDropdownMenu
-          class="dropdown-menu"
-          aria-labelledby="navbarDropdown"
-        >
-          <a ngbDropdownItem class="dropdown-item" routerLink="/my/orders"
-            >My Orders</a
           >
+          {{ appUser.name }}</button>
+
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a ngbDropdownItem class="dropdown-item" routerLink="/my/orders">My Orders</a>
 
           <ng-container *ngIf="appUser.isAdmin">
-            <a ngbDropdownItem class="dropdown-item" routerLink="/admin/orders"
-              >Manage Order</a
-            >
-            <a
-              ngbDropdownItem
-              class="dropdown-item"
-              routerLink="/admin/products"
-              >Manage Product</a
-            >
+            <a ngbDropdownItem class="dropdown-item" routerLink="/admin/orders">Manage Order</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/admin/products" >Manage Product</a>
           </ng-container>
 
-          <a ngbDropdownItem class="dropdown-item" (click)="logout()"
-            >Log Out</a
-          >
+          <a ngbDropdownItem class="dropdown-item" (click)="logout()">Log Out</a>
         </div>
       </li>
     </ul>
