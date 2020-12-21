@@ -22,9 +22,9 @@ export class OrderService {
     return this.db.list("/orders").valueChanges();
   }
 
-  getOrderByUser(userId: string) {
+  getOrderByUser(userId: string){
     return this.db
-      .list("/orders", (ref) => ref.orderByChild("userId").equalTo(userId))
+      .list<Order>("/orders", (ref) => ref.orderByChild('UserId').equalTo(userId))
       .valueChanges();
   }
 }

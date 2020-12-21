@@ -57,7 +57,6 @@ export class ShoppingCartService {
       .pipe(take(1))
       .subscribe((item) => {
         if (item) {
-          console.log(item);
 
           let quantity = (item.quantity || 0) + change;
 
